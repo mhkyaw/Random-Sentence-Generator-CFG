@@ -8,3 +8,4 @@
 
 (ROOT (S (NP (Det the) (Noun pickle)) (VP (Verb understood) (NP (Det a) (Noun sandwich))))   !)
 
+ 
