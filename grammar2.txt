@@ -3,16 +3,7 @@
 #    - preterminals are capitalized     (Noun)
 #    - other nonterminals are all-caps  (NP)
 # 
-# This convention just makes grammars more readable to humans.  Thus:
-#
-#    - When *you* are writing grammars, you should 
-#      follow this convention unless you have a good reason not to.  
-#
-#    - But your *program* should still work with grammars that don't 
-#      follow this convention.  It should not pay any attention to
-#      upper/lower case.  From your program's point of view, 
-#      if there is at least one rule for rewriting a symbol, then
-#      that symbol is a nonterminal and should be rewritten.
+# This convention just makes grammars more readable to humans.  
 #######################
 
 # Rules for creating full sentences.
