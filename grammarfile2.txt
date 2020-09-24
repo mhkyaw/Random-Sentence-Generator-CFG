@@ -1,0 +1,123 @@
+# This grammar uses a convention that
+#    - terminals are lowercase          (president)
+#    - preterminals are capitalized     (Noun)
+#    - other nonterminals are all-caps  (NP)
+# 
+# This convention just makes grammars more readable to humans.  Thus:
+#
+#    - When *you* are writing grammars, you should 
+#      follow this convention unless you have a good reason not to.  
+#
+#    - But your *program* should still work with grammars that don't 
+#      follow this convention.  It should not pay any attention to
+#      upper/lower case.  From your program's point of view, 
+#      if there is at least one rule for rewriting a symbol, then
+#      that symbol is a nonterminal and should be rewritten.
+#######################
+
+# Rules for creating full sentences.
+
+1 ROOT	S .
+1 ROOT	S !
+# mixing terminals and nonterminals is ok.
+1 ROOT	is it true that S ?
+
+# The basic grammar rules.  Here's what the abbreviations stand for:
+#    S  = sentence
+#    NP = noun phrase
+#    VP = verb phrase
+#    PP = prepositional phrase
+#    Det = determiner (sometimes called "article")
+#    Prep = preposition
+#    Adj = adjective
+
+1 S	NP VP
+1 S	NP DV1 NP PVnO
+#Part3Change3: New structure with two independent clauses
+1 S	NP DV2 NP
+#Part3Change6: New structure with two independent clauses
+
+1 S	Struc NP VP DS NP
+#Part3Change7: New structure with inverse structure
+
+1 S	PN VP
+#Part3Change1: adding pronouns to the list
+1 S	NP PVnO
+#Part3Change2: adding past tense without objects to the list
+
+1 S	NP C  NP  VP
+1 S	NP VP C VP
+1 VP	Verb C  Verb
+#Part3Change4: Conjunction structures
+
+20 VP	Verb NP
+#     change to prevent long sentences from part 3
+20 NP	Det Noun
+#     change to prevent long sentences from part 3
+#20 Adj	adv Adj
+#Part3Change5: Adding adverbs
+
+1 NP	NP PP
+20 PP	Prep NP
+#     Change2: Another change I made was that I changed the count of PP      #     going to Prepositions and NP from 1 to 20 so that sentences sound more #     natural with prepositional phrases. This would not affect the length  #     drastically as the other component the effects the length,NP -> NP +   #     PP is still set at 1.
+
+
+4 Noun	Adj Noun
+#      Change1: I decreased the count of Noun going to adj+noun to 4 because #      double adjectives make sentences sound less natural. 
+
+
+# Vocabulary.  Your program can see that "ate" is a terminal
+# symbol because there exists no rule for rewriting it.
+# Any symbol that can rewrite as a terminal (or a string of 
+# terminals, like "chief of staff") is called a "preterminal."  Notice 
+# that a preterminal is a special kind of nonterminal.
+
+1 Verb	ate
+1 Verb	wanted
+1 Verb	kissed
+1 Verb	understood
+1 Verb	pickled
+
+1 PVnO	sighed
+#Part3Change2: adding past tense without objects to the list
+
+3 Det	the
+#      Change3: I made a third change, but it’s less of grammar and more of #      word choice. Conversational language usually hovers around specific  #      topics within context, hence the article “the” is more common than “a”#      , but not drastically so I increased the count of “the” from 1 to 3.
+1 Det	a
+1 Det	every
+
+1 PN	AungKhant
+#Part3Change1: adding pronouns to the list
+1 Noun	president
+1 Noun	sandwich
+1 Noun	pickle
+1 Noun	chief of staff
+1 Noun	floor
+
+1 Adj	fine
+1 Adj	delicious
+1 Adj	perplexed
+1 Adj	pickled
+
+1 Prep	with
+1 Prep	on
+1 Prep	under
+1 Prep	in
+
+
+1 DV1	thought that
+1 DV2	worked on
+#Part3Change3: verbs that are dependent on words such as "that"
+
+
+
+1 C	and
+#Part3Change4: Conjunctions
+
+1 Struc	that
+1 DS	perplexed
+1 DS	pickled
+#Part3Change7: New structure with inverse structure
+
+#1 adv	very
+#Part3Change5: Adding adverbs
