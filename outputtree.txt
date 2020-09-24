@@ -1,0 +1,10 @@
+(ROOT (S (NP (Det every) (Noun pickle)) (VP (Verb kissed) (NP (Det the) (Noun chief of staff))))   !)
+
+(ROOT (S (NP (Det every) (Noun floor)) (VP (Verb ate) (NP (Det the) (Noun (Adj fine) (Noun (Adj delicious) (Noun (Adj fine) (Noun president)))))))   .)
+
+(ROOT (S (NP (Det a) (Noun floor)) (VP (Verb kissed) (NP (Det the) (Noun (Adj pickled) (Noun (Adj pickled) (Noun (Adj fine) (Noun pickle)))))))   !)
+
+(ROOT (S (NP (Det the) (Noun pickle)) (VP (Verb pickled) (NP (Det the) (Noun (Adj pickled) (Noun (Adj fine) (Noun chief of staff))))))   !)
+
+(ROOT (S (NP (Det the) (Noun pickle)) (VP (Verb understood) (NP (Det a) (Noun sandwich))))   !)
+
