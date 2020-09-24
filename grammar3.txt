@@ -6,6 +6,7 @@
 # This convention just makes grammars more readable to humans.  
 #######################
 
+
 # Rules for creating full sentences.
 
 1 ROOT	S .
